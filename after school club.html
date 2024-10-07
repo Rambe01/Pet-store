@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue.js After School Club</title>
+    <script src="https://unpkg.com/vue@2.7.8/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1 v-text="sitename"></h1>
+        </header>
+        <main>
+            <figure>
+             <img v-bind:src="product.image">
+            </figure>
+            <h2 v-text="product.title"></h2>
+            <p v-text="product.description"></p>
+            <p>Price: {{product.price}}</p>
+        </main>
+    </div>
+    <script type="text/javascript">
+        var webstore = new Vue({el:'#app',data:{
+            sitename:'After School Club',
+            product:{
+                id:1001,
+                title:"English Literature",
+                description:"A detailed class for English lierature where chapters like Merchant of Venice or poems like Fire and Ice are taught. Situated in Dubai",
+                price:2500,
+                image:'image/fire n ice.jpg'}
+        }});
+    </script>
+</body>       
+</html>

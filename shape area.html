@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Computed New calucator</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+        <p>Area is equal to: {{ area }}</p>
+        <p>
+            <button v-on:click="length += 1">Add length</button>
+            <button v-on:click="width += 1">Add width</button>
+        </p>
+    </div>
+    
+    <script type="text/javascript">
+        var app = new Vue({
+            el: '#app',
+            data: {
+                length: 2,
+                width: 7
+            },
+            computed: {
+                area: function() {
+                    return this.width * this.length;
+                }
+            }
+        });
+    </script>
+  </body>
+</html>
